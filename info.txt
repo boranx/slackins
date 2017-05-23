@@ -1,0 +1,1 @@
+http://jenkins.trendyol.com:8080/job/test/buildWithParameters?token=test&application=ios
