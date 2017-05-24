@@ -28,11 +28,19 @@ func TestDefaultJenkins_job(t *testing.T) {
 	}
 }
 
-func TestDefaultJenkins_parameters(t *testing.T) {
+func TestDefaultJenkins_parameterone(t *testing.T) {
 	config := DefaultJenkins()
 	expected := "test"
 	if config.Parameters["application"] != expected {
 		t.Errorf("expected parameter is to be %d but got %d", expected, config.Parameters["application"])
+	}
+}
+
+func TestDefaultJenkins_parametersecond(t *testing.T) {
+	config := DefaultJenkins()
+	expected := "1.1.1"
+	if config.Parameters["version"] != expected {
+		t.Errorf("expected parameter is to be %d but got %d", expected, config.Parameters["version"])
 	}
 }
 
