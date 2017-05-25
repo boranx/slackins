@@ -25,6 +25,16 @@ func DefaultJenkins() *Jenkins {
 	}
 }
 
+func Construct(uri string, job string, token string, parameters map[string]string) *Jenkins {
+	jenkins := Jenkins{}
+	jenkins.Uri = uri
+	jenkins.Job = job
+	jenkins.Token = token
+	jenkins.Parameters = parameters
+
+	return &jenkins
+}
+
 func (jnks *Jenkins) uri() (uri string) {
 	return fmt.Sprintf("%s/job/%s/buildWithParameters?token=%s", jnks.Uri, jnks.Job, jnks.Token)
 }

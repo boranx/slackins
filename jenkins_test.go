@@ -59,3 +59,11 @@ func TestUriwithParameters(t *testing.T) {
 		t.Errorf("expected parameter is to be %d but got %d", expected, config.uriwithparameters())
 	}
 }
+
+func TestConstruct(t *testing.T) {
+	test := Construct("a", "b", "c", map[string]string{"application": "test", "version": "1.1.1"})
+	expected := "a/job/b/buildWithParameters?token=c&application=test&version=1.1.1"
+	if test.uriwithparameters() != expected {
+		t.Errorf("expected parameter is to be %d but got %d", expected, test.uriwithparameters())
+	}
+}

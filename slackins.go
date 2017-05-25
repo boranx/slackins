@@ -5,8 +5,8 @@ import (
 	"net/http"
 )
 
-func trigger(url string, token string, parameters string) bool {
-	resp, err := http.Get(url + "?token=" + token + parameters)
+func trigger(obj Jenkins) bool {
+	resp, err := http.Get(obj.uriwithparameters())
 	if err == nil && resp.StatusCode == 201 {
 		return true
 	} else {
@@ -18,9 +18,14 @@ func trigger(url string, token string, parameters string) bool {
 func main() {
 	env := envOperations{}
 
-	env.SetEnv("jenkins-url", "http://jenkins.trendyol.com:8080/job/test/buildWithParameters")
-	env.SetEnv("token", "test")
-	env.SetEnv("parameters", "&application=android")
+	env.SetEnv("URI", "http://jenkins.trendyol.com:8080")
+	env.SetEnv("TOKEN", "test")
+	env.SetEnv("JOB", "test")
 
-	trigger(env.exist("jenkins-url"), env.exist("token"), env.exist("parameters"))
+	jenkins := Construct(env.exist("URI"), env.exist("JOB"), env.exist("TOKEN"), map[string]string{"application": "test", "version": "1.1.1"})
+
+	achieve := trigger(*jenkins)
+	if !achieve {
+		log.Fatalf("jenkins trigger job failed Expected : true, got : False")
+	}
 }

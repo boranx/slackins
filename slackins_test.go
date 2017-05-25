@@ -6,13 +6,14 @@ import (
 )
 
 func TestTrigger(t *testing.T) {
+	jenkins := DefaultJenkins()
 	httpmock.Activate()
 	defer httpmock.DeactivateAndReset()
 
-	httpmock.RegisterResponder("GET", "http://test:8080/job/test/buildWithParameters?token=test&application=ios",
+	httpmock.RegisterResponder("GET", jenkins.uriwithparameters(),
 		httpmock.NewStringResponder(201, `[{}]`))
 
-	achieve := trigger("http://test:8080/job/test/buildWithParameters", "test", "&application=ios")
+	achieve := trigger(*jenkins)
 	if !achieve {
 		t.Fatalf("jenkins trigger job failed Expected : true, got : False")
 	}
