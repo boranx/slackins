@@ -1,0 +1,14 @@
+sudo: false
+
+language: go
+
+go:
+  - 1.6
+
+install:
+  - go get gopkg.in/jarcoal/httpmock.v1
+  - go get github.com/sbstjn/hanu
+
+branches:
+  only:
+    - master
