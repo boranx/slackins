@@ -8,9 +8,6 @@ import (
 func main() {
 	env := envOperations{}
 
-	env.SetEnv("URI", "http://jenkins.trendyol.com:8080")
-	env.SetEnv("TOKEN", "test")
-
 	slack, err := hanu.New(env.exist("SLACK_BOT_API_TOKEN"))
 
 	if err != nil {
