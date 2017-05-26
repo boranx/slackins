@@ -1,1 +1,6 @@
 http://jenkins.trendyol.com:8080/job/test/buildWithParameters?token=test&application=ios
+
+
+env.SetEnv("URI", "http://jenkins.trendyol.com:8080")
+env.SetEnv("TOKEN", "test")
+env.exist("SLACK_BOT_API_TOKEN")
