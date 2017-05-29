@@ -8,6 +8,10 @@ go:
 install:
   - go get gopkg.in/jarcoal/httpmock.v1
   - go get github.com/sbstjn/hanu
+  - go get github.com/mattn/goveralls
+
+script:
+  - $HOME/gopath/bin/goveralls -service=travis-ci
 
 branches:
   only:

@@ -14,7 +14,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	slack.Command("jenkins <job> <parameters>", func(conv hanu.ConversationInterface) {
+	slack.Command("execute <job> <parameters>", func(conv hanu.ConversationInterface) {
 		job, _ := conv.String("job")
 		params, _ := conv.String("parameters")
 		jenkins := Construct(env.exist("URI"), job, env.exist("TOKEN"), *parse(params))
