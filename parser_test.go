@@ -3,7 +3,6 @@ package main
 import "testing"
 
 func TestParser(t *testing.T) {
-	//mapping := make(map[string]string)
 	key := "param1=1,param2=2"
 	expected := "1"
 	mapping := *parse(key)
