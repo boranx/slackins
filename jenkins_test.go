@@ -48,7 +48,7 @@ func TestUri(t *testing.T) {
 	config := DefaultJenkins()
 	expected := "http://localhost:8080/job/test/buildWithParameters?token=test"
 	if config.uri() != expected {
-		t.Errorf("expected parameter is to be %d but got %d", expected, config.uri())
+		t.Errorf("expected parameter is to be %s but got %s", expected, config.uri())
 	}
 }
 
@@ -56,7 +56,7 @@ func TestUriwithParameters(t *testing.T) {
 	config := DefaultJenkins()
 	expected := "http://localhost:8080/job/test/buildWithParameters?token=test&application=test&version=1.1.1"
 	if config.uriwithparameters() != expected {
-		t.Errorf("expected parameter is to be %d but got %d", expected, config.uriwithparameters())
+		t.Errorf("expected parameter is to be %s but got %s", expected, config.uriwithparameters())
 	}
 }
 

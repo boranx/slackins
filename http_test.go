@@ -19,14 +19,14 @@ func TestTrigger(t *testing.T) {
 }
 
 func TestTriggerFails(t *testing.T) {
-	jenkins := DefaultJenkins()
+	conf := DefaultJenkins()
 	httpmock.Activate()
 	defer httpmock.DeactivateAndReset()
 
-	httpmock.RegisterResponder("GET", jenkins.uriwithparameters(),
+	httpmock.RegisterResponder("GET", conf.uriwithparameters(),
 		httpmock.NewStringResponder(404, `[{}]`))
 
-	if trigger(*jenkins) {
+	if trigger(*conf) {
 		t.Fatalf("jenkins trigger job failed Must return false")
 	}
 }
