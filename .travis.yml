@@ -9,10 +9,10 @@ install:
   - go get gopkg.in/jarcoal/httpmock.v1
   - go get github.com/sbstjn/hanu
   - go get github.com/mattn/goveralls
-  
+
 scripts:
-  - $HOME/gopath/bin/goveralls -ignore slackins.go -service=travis-ci
-  
+  - $HOME/gopath/bin/goveralls -service=travis-ci
+
 branches:
   only:
     - master
