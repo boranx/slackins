@@ -10,3 +10,6 @@ Configure Jenkins Jobs with Parameterized Build and enable remote triggering.
 - SLACK_BOT_API_TOKEN=xxxxx
 - URI=http://localjenkins:8080
 - TOKEN=xxxx
+
+### Usage
+- @chatbot execute deployapi version=1.1.1,transform=true
