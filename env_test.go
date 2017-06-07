@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func Testexist(t *testing.T) {
+func TestExist(t *testing.T) {
 	env := envOperations{}
 	expected := "key"
 	value := "value"
@@ -18,7 +18,7 @@ func Testexist(t *testing.T) {
 
 func TestSetEnv(t *testing.T) {
 	env := envOperations{}
-	expected := "key"
+	expected := "test"
 	value := "value"
 	if !env.SetEnv(expected, value) {
 		t.Fatalf("Expected output :true got : false")
