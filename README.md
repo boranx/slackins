@@ -11,5 +11,9 @@ Configure Jenkins Jobs with Parameterized Build and enable remote triggering.
 - URI=http://localjenkins:8080
 - TOKEN=xxxx
 
+### Docker
+- docker build -t "slackins" .
+- docker run -d -e SLACK_BOT_API_TOKEN='yourtoken' -e TOKEN='jobtoken' -e URI='jenkinsurl' slackins 
+
 ### Usage
 - @chatbot execute deployapi version=1.1.1,transform=true
