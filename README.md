@@ -1,5 +1,5 @@
 # slackins [![Build Status](https://travis-ci.org/boranx/slackins.svg?branch=master)](https://travis-ci.org/boranx/slackins) [![Coverage Status](https://coveralls.io/repos/github/boranx/slackins/badge.svg)](https://coveralls.io/github/boranx/slackins)
-Slacking is a stand alone service that integrates slack and jenkins. No plug-in required.
+Slackins is a stand alone service that integrates slack and jenkins. No plug-in required.
 You can execute any job via slackbot.
 
 ## Configuration
